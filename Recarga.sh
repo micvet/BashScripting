@@ -26,7 +26,7 @@ request_body='<?xml version="1.0" encoding="UTF-8"?>
                 </cbs:AccessSecurity>
             </RequestHeader>
             <RechargeRequest>
-                <ars:RechargeChannelID>30</ars:RechargeChannelID>
+                <ars:RechargeChannelID>00</ars:RechargeChannelID>
                 <ars:RechargeObj>
                     <ars:SubAccessCode>
                         <arc:PrimaryIdentity>'"$telefone"'</arc:PrimaryIdentity>
@@ -34,7 +34,7 @@ request_body='<?xml version="1.0" encoding="UTF-8"?>
                 </ars:RechargeObj>
                 <ars:RechargeInfo>
                     <ars:CashPayment>
-                        <ars:PaymentMethod>2001</ars:PaymentMethod>
+                        <ars:PaymentMethod>00</ars:PaymentMethod>
                         <ars:Amount>'"$valor"'</ars:Amount>
                         <ars:BankInfo>
                             <arc:BankCode/>
