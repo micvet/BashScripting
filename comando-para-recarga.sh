@@ -6,7 +6,7 @@ read -p "Valor em centavos: " valor
 
 data_hora=$(date +"%Y%m%d%H%M%S")
 
-messageseq="${data_hora}T55R873"
+messageseq="${data_hora}"
 
 echo -e "\n Request:\n " 
 
@@ -16,23 +16,23 @@ request_body='<?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ars="http://www.server.com" xmlns:server="http://www.server.com/" xmlns:arc="http://server.server.com/">
     <soapenv:Header/>
     <soapenv:Body>
-        <ars:RechargeRequestMsg>
+        <ars:RequestMsg>
             <RequestHeader>
                 <cbs:Version>1</cbs:Version>
                 <cbs:MessageSeq>'"$messageseq"'</cbs:MessageSeq>
                 <cbs:AccessSecurity>
                     <cbs:LoginSystemCode>OPERADORAPDV</cbs:LoginSystemCode>
-                    <cbs:Password>xz9Cxl2UC8QHfzY70hLV3X7TuoRksktr3lPIwl7KLuU=</cbs:Password>
+                    <cbs:Password>123456</cbs:Password>
                 </cbs:AccessSecurity>
             </RequestHeader>
-            <RechargeRequest>
-                <ars:RechargeChannelID>00</ars:RechargeChannelID>
-                <ars:RechargeObj>
+            <Request>
+                <ars:ChannelID>00</ars:ChannelID>
+                <ars:Obj>
                     <ars:SubAccessCode>
                         <arc:PrimaryIdentity>'"$telefone"'</arc:PrimaryIdentity>
                     </ars:SubAccessCode>
-                </ars:RechargeObj>
-                <ars:RechargeInfo>
+                </ars:Obj>
+                <ars:Info>
                     <ars:CashPayment>
                         <ars:PaymentMethod>00</ars:PaymentMethod>
                         <ars:Amount>'"$valor"'</ars:Amount>
@@ -41,17 +41,17 @@ request_body='<?xml version="1.0" encoding="UTF-8"?>
                             <arc:CreditCardType/>
                         </ars:BankInfo>
                     </ars:CashPayment>
-                </ars:RechargeInfo>
+                </ars:Info>
                 <ars:AdditionalProperty>
-                    <arc:Code>BALANCE_TYPE</arc:Code>
+                    <arc:Code>BALANCE</arc:Code>
                     <arc:Value/>
                 </ars:AdditionalProperty>
                 <ars:AdditionalProperty>
                     <arc:Code>C_OPERADORA_DOBRO</arc:Code>
                     <arc:Value/>
                 </ars:AdditionalProperty>
-            </RechargeRequest>
-        </ars:RechargeRequestMsg>
+            </Request>
+        </ars:RequestMsg>
     </soapenv:Body>
 </soapenv:Envelope>'
 
