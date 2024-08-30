@@ -19,12 +19,11 @@ Um timestamp é gerado usando o comando date, armazenado na variável data_hora,
 
 **Construção da Requisição SOAP:**
 
-A requisição SOAP é montada em um formato XML, incorporando o número de telefone, o valor, e o timestamp.
+A requisição SOAP é montada no formato XML, incorporando o número de telefone, o valor, e o timestamp.
 
 **Envio da Requisição:**
 
-A requisição é enviada para o endpoint especificado (http://12345) usando o comando curl.
-O cabeçalho Content-Type: text/xml é utilizado para definir o tipo de conteúdo da requisição.
+A requisição é enviada para o endpoint (http://12345) usando o comando curl.
 
 **Exibição da Resposta:**
 
@@ -32,10 +31,10 @@ A resposta do servidor é capturada e formatada usando o comando xmllint para fa
 
 **Variáveis:**
 
-telefone: Número de telefone inserido pelo usuário.
-valor: Valor em centavos inserido pelo usuário.
-data_hora: Timestamp gerado para o campo MessageSeq.
-messageseq: Valor do timestamp utilizado como sequência de mensagem.
-endpoint: URL do servidor para onde a requisição SOAP será enviada.
-request_body: Corpo da requisição SOAP, montado dinamicamente com base nas entradas do usuário.
-response: Resposta do servidor, capturada e formatada.
+telefone: Número de telefone inserido pelo usuário.<br>
+valor: Valor em centavos inserido pelo usuário..<br>
+data_hora: Timestamp gerado para o campo MessageSeq..<br>
+messageseq: Valor do timestamp utilizado como sequência de mensagem..<br>
+endpoint: URL do servidor para onde a requisição será enviada..<br>
+request_body: Corpo da requisição montado com base nas entradas das variáveis..<br>
+response: Resposta do servidor formatada.
